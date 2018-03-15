@@ -1,0 +1,25 @@
+<h1>Burger Z0n3</h1>
+
+<div class='burger-container'>
+    <ul>
+        {{#each burger}}
+            {{#unless eaten}}
+                <li>{{name}}<button data-id='{{id}}'></button></li>
+            {{/unless}}
+        {{/each}}
+    </ul>
+</div>
+
+<div class='burger-container'>
+    <ul>
+        {{#each burger}}
+            {{#if eaten}}
+                <li>{{name}}<button data-id='{{id}}'></button></li>
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>
+
+<h2>Add burger?</h2>
+<input type='text' placeholder="burger name" id='burger-name'>
+<button id='submit'>Submit</button>

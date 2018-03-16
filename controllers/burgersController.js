@@ -12,8 +12,21 @@ router.get('/', (req,res)=>{
     })
 })
 
+router.post('/', (req, res)=>{
+    orm.add(req.body.name, (data)=>{
+        console.log(data)
+        res.end()
+    })
+})
 
-
-
+router.put('/:id', (req, res)=>{
+    console.log('got request')
+    var id = req.params.id;
+    orm.update(id, (data)=>{
+        console.log(data);
+        res.end();
+    })
+})
 
 module.exports = router;
+
